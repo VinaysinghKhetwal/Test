@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <constant name = "struts.devMode" value = "true" />
+	<package name="default" extends="struts-default,json-default">
+		<action name="add" class="action.EmpAction" method="add">
+			<result name="success">welcome.jsp</result>
+		</action>
+		<action name="findAll" class="action.TestAction" method="getAll">
+			<result name="success">welcome.jsp</result>
+		</action>
+		<action name="edit" class="action.EmpAction" method="edit">
+			<result name="success">welcome.jsp</result>
+		</action>
+		<action name="delete" class="action.EmpAction" method="delete">
+			<result name="success">welcome.jsp</result>
+		</action>
+		<action name="update" class="action.EmpAction" method="update">
+			<result name="success">welcome.jsp</result>
+		</action>
+		<action name="feed" class="action.EmpAction" method="feed">
+			<result type="json">Feeds.jsp</result>
+		</action>
+		<action name="getFeed" class="action.EmpAction" method="getAllFeed">
+			<result type="json">Feeds.jsp</result>
+		</action>
+		<action name="userImage" class="action.ImageAction" >
+			<interceptor-ref name="fileUpload">
+			<param name="maximumSize">200000</param>
+			<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>			
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">SuccessUserImage.jsp</result>
+			<result name="input">UserImage.jsp</result>
+		</action>	
+		<action name="login" class="action.LoginAction" method="login">
+			<result name="success">/welcome.jsp</result>
+			<result name="error">/Login-error.jsp</result>
+		</action>
+	</package>
+	<package name="email"  extends="struts-default,json-default">
+	<action name="emailer" class="action.EmailAction"  method="mailM">
+		<result name="success">success.jsp</result>
+	</action>
+	</package>
+</struts>
