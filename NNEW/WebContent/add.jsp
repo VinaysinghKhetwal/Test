@@ -32,7 +32,6 @@
 
 			} else {
 				alert('Please Enter Valid Email Address');
-
 			}
 
 		} else {
