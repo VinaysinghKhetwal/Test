@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script src="jquery.js"></script>
 <script type="text/javascript">
-	//dasdas hua bhai
+	//dasdas hua bhai huaaaa
 	function onSubmit() {
 		var name = $('#name').val();
 		var fullname = $('#fullname').val();
